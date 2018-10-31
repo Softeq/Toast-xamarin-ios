@@ -14,7 +14,4 @@
     <tags>toast ios xamarin binding softeq library uikit ui framework</tags>
     <releaseNotes>First release</releaseNotes>
   </metadata>
-  <files>
-    <file src="bin/Release/ToastBindings.dll" target="lib/Xamarin.iOS10/ToastBindings.dll" />
-  </files>
 </package>
