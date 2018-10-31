@@ -1,6 +1,6 @@
-﻿// Developed for [customer name] by Softeq Development Corporation
+﻿// Developed by Softeq Development Corporation
 // http://www.softeq.com
-//
+
 using Foundation;
 using UIKit;
 
