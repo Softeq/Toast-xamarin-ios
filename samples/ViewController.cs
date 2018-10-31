@@ -3,6 +3,9 @@
 
 using System;
 using UIKit;
+using Foundation;
+using ToastBindings;
+using CoreGraphics;
 
 namespace ToastSamples
 {
@@ -13,13 +16,45 @@ namespace ToastSamples
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
+
+
+            BasicUsageBtn.TouchUpInside += (sender, e) => MakeBasic();
+            MakeWithDurationBtn.TouchUpInside += (sender, e) => MakeWithDurationAndPosition();
         }
 
-        public override void DidReceiveMemoryWarning()
+        private void MakeBasic()
         {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
+            View.MakeToast(new NSString("This is a piece of toast"));
+        }
+
+        private void MakeWithDurationAndPosition()
+        {
+            View.MakeToast(new NSString("This is a piece of toast on top for 3 seconds"),
+                           3.0f,
+                           CSToastPosition.Center);
+        }
+
+        private void MakeWithTitle()
+        {
+            View.MakeToast(new NSString("This is a piece of toast with a title"),
+                           2.0f,
+                           CSToastPosition.Top,
+                           new NSString("Toast Title"),
+                           new UIImage(),
+                           new CSToastStyle(),
+                           x => { });
+        }
+
+        private void ShowCustomToast()
+        {
+            var customView = new UIView(new CGRect(0, 0, 80, 400));
+            customView.AutoresizingMask = UIViewAutoresizing.FlexibleLeftMargin |
+                                          UIViewAutoresizing.FlexibleRightMargin |
+                                          UIViewAutoresizing.FlexibleTopMargin |
+                                          UIViewAutoresizing.FlexibleBottomMargin;
+            customView.BackgroundColor = UIColor.Orange;
+
+            View.ShowToast(customView, 2f, CSToastPosition.Center, x => { });
         }
     }
 }

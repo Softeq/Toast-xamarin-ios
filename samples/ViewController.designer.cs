@@ -14,12 +14,20 @@ namespace ToastSamples
 	{
 		[Outlet]
 		UIKit.UIButton BasicUsageBtn { get; set; }
+
+		[Outlet]
+		UIKit.UIButton MakeWithDurationBtn { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
 			if (BasicUsageBtn != null) {
 				BasicUsageBtn.Dispose ();
 				BasicUsageBtn = null;
+			}
+
+			if (MakeWithDurationBtn != null) {
+				MakeWithDurationBtn.Dispose ();
+				MakeWithDurationBtn = null;
 			}
 		}
 	}
