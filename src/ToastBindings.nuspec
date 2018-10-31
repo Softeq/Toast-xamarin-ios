@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ToastBindings</id>
+    <version>4.0.0</version>
+    <title>Toast for Xamarin.iOS</title>
+    <authors>Softeq Development Corp.</authors>
+    <owners>Softeq Development Corp.</owners>
+    <licenseUrl>https://github.com/Softeq/Toast-xamarin-ios/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Softeq/Toast-xamarin-ios</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Xamarin iOS binding library of Toast - toast notifications to the UIView.</description>
+    <copyright>Copyright 2018 Softeq Development Corp.</copyright>
+    <tags>toast ios xamarin binding softeq library uikit ui framework</tags>
+    <releaseNotes>First release</releaseNotes>
+  </metadata>
+  <files>
+    <file src="bin/Release/ToastBindings.dll" target="lib/Xamarin.iOS10/ToastBindings.dll" />
+  </files>
+</package>
