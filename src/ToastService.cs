@@ -2,7 +2,6 @@
 // http://www.softeq.com
 
 using System;
-using ToastBindings;
 using UIKit;
 
 namespace ToastBindings
@@ -26,7 +25,7 @@ namespace ToastBindings
                     toastView,
                     CSToastManager.DefaultDuration,
                     CSToastManager.DefaultPosition,
-                    x => { completion(); });
+                    x => completion());
             }
         }
     }
