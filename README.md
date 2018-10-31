@@ -8,7 +8,11 @@ ToastBindings is a Xamarin.iOS binding library that adds toast notifications to 
 
 ## Installation
 
-// WIP
+NuGet:
+
+```
+Install-Package ToastBindings
+```
 
 ## Basic Examples
 
