@@ -54,7 +54,7 @@ namespace ToastSamples
                                           UIViewAutoresizing.FlexibleBottomMargin;
             customView.BackgroundColor = UIColor.Orange;
 
-            View.ShowToast(customView, 2f, CSToastPosition.Center, x => { });
+            ToastService.ShowToast(View, customView, ToastPosition.Center, 2f, () => { });
         }
     }
 }
