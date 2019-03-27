@@ -6,6 +6,7 @@ using UIKit;
 using Foundation;
 using ToastBindings;
 using CoreGraphics;
+using System.Diagnostics;
 
 namespace ToastSamples
 {
@@ -54,7 +55,7 @@ namespace ToastSamples
                                           UIViewAutoresizing.FlexibleBottomMargin;
             customView.BackgroundColor = UIColor.Orange;
 
-            ToastService.ShowToast(View, customView, ToastPosition.Center, 2f, () => { });
+            ToastService.ShowToast(View, customView, ToastPosition.Top, 5f, () => Debug.WriteLine("toast finished"));
         }
     }
 }
