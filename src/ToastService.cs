@@ -3,6 +3,8 @@
 
 using System;
 using UIKit;
+using Foundation;
+using System.ComponentModel;
 
 namespace ToastBindings
 {
@@ -13,9 +15,13 @@ namespace ToastBindings
             view.HideToast(toast);
         }
 
-        public static void ShowToast(UIView parentView, UIView toastView, Action completion = null)
+        public static void ShowToast(UIView parentView,
+                                     UIView toastView,
+                                     ToastPosition? toastPosition = null,
+                                     double? duration = null,
+                                     Action completion = null)
         {
-            if (completion == null)
+            if (toastPosition == null && duration == null && completion == null)
             {
                 parentView.ShowToast(toastView);
             }
@@ -23,9 +29,28 @@ namespace ToastBindings
             {
                 parentView.ShowToast(
                     toastView,
-                    CSToastManager.DefaultDuration,
-                    CSToastManager.DefaultPosition,
-                    x => completion());
+                    duration ?? CSToastManager.DefaultDuration,
+                    ToCSToastPosition(toastPosition),
+                    x => completion?.Invoke());
+            }
+        }
+
+        private static NSString ToCSToastPosition(ToastPosition? position)
+        {
+            if (!position.HasValue)
+            {
+                return CSToastManager.DefaultPosition;
+            }
+            switch (position)
+            {
+                case ToastPosition.Bottom:
+                    return CSToastPosition.Bottom;
+                case ToastPosition.Center:
+                    return CSToastPosition.Center;
+                case ToastPosition.Top:
+                    return CSToastPosition.Top;
+                default:
+                    throw new InvalidEnumArgumentException(nameof(position), (int)position, typeof(ToastPosition));
             }
         }
     }
