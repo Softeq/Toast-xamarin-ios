@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>ToastBindings</id>
-    <version>4.0.0</version>
+    <version>4.0.0.1</version>
     <title>Toast for Xamarin.iOS</title>
     <authors>Softeq Development Corp.</authors>
     <owners>Softeq Development Corp.</owners>
