@@ -1,12 +1,11 @@
 ﻿// Developed by Softeq Development Corporation
 // http://www.softeq.com
 
-namespace ToastBindings
+namespace ToastBindings;
+
+public enum ToastPosition
 {
-    public enum ToastPosition
-    {
-        Bottom,
-        Center,
-        Top
-    }
+    Bottom,
+    Center,
+    Top
 }
