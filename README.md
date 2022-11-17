@@ -1,4 +1,4 @@
-# Toast for Xamarin.iOS
+# Toast
 
 ToastBindings is a Xamarin.iOS binding library that adds toast notifications to the `UIView` object class. It is intended to be simple, lightweight, and easy to use. Most toast notifications can be triggered with a single line of code.
 
@@ -7,14 +7,14 @@ ToastBindings is a Xamarin.iOS binding library that adds toast notifications to 
 
 ## Screenshots
 
-![Toast Screenshots](https://github.com/scalessec/Toast/raw/master/toast_screenshots.jpg)
+![Toast Screenshots](https://raw.githubusercontent.com/scalessec/Toast/master/toast_screenshots.jpg)
 
 ## Installation
 
 NuGet:
 
 ```
-Install-Package ToastBindings
+dotnet add package ToastBindings
 ```
 
 ## Basic Examples
