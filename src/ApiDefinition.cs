@@ -24,7 +24,7 @@ namespace ToastBindings
         void MakeToast(
             NSString message,
             nfloat duration,
-            NSString position,
+            NSObject position,
             [NullAllowed] NSString title,
             [NullAllowed] UIImage image,
             [NullAllowed] CSToastStyle style,

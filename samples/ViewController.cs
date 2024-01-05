@@ -29,11 +29,14 @@ public partial class ViewController : UIViewController
 
     private void MakeWithDurationAndPosition()
     {
+        var position = CSToastPosition.Center;
+        // or custom coordinates:
+        // var position = NSValue.FromCGPoint(new CGPoint(30, 200));
 
         View!.MakeToast(
             message: new NSString("This is a piece of toast on top for 3 seconds"),
             duration: 3.0f,
-            position: CSToastPosition.Center,
+            position: position,
             title: new NSString("Test Title"),
             image: null,
             style: null,
