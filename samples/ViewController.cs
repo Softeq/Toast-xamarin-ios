@@ -29,9 +29,18 @@ public partial class ViewController : UIViewController
 
     private void MakeWithDurationAndPosition()
     {
-        View!.MakeToast(new NSString("This is a piece of toast on top for 3 seconds"),
-                       3.0f,
-                       CSToastPosition.Center);
+
+        View!.MakeToast(
+            message: new NSString("This is a piece of toast on top for 3 seconds"),
+            duration: 3.0f,
+            position: CSToastPosition.Center,
+            title: new NSString("Test Title"),
+            image: null,
+            style: null,
+            completion: (didTap) =>
+            {
+                Debug.WriteLine(didTap ? "Did Tap" : "No Tap");
+            });
     }
 
     private void MakeWithTitle()
