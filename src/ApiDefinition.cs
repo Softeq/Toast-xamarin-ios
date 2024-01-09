@@ -21,13 +21,24 @@ namespace ToastBindings
         void MakeToast(NSString message, nfloat duration, NSString position);
 
         [Export("makeToast:duration:position:title:image:style:completion:")]
-        void MakeToast(NSString message, nfloat duration, NSString position, NSString title, UIImage image, CSToastStyle style, CompletionDelegate completion);
+        void MakeToast(
+            NSString message,
+            nfloat duration,
+            NSObject position,
+            [NullAllowed] NSString title,
+            [NullAllowed] UIImage image,
+            [NullAllowed] CSToastStyle style,
+            [NullAllowed] CompletionDelegate completion);
 
         [Export("showToast:")]
         void ShowToast(UIView view);
 
         [Export("showToast:duration:position:completion:")]
-        void ShowToast(UIView view, double duration, NSString position, CompletionDelegate completion);
+        void ShowToast(
+            UIView view,
+            double duration,
+            NSString position,
+            [NullAllowed] CompletionDelegate completion);
 
         [Export("hideToast:")]
         void HideToast(UIView view);

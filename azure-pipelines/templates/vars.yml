@@ -1,2 +1,2 @@
 variables:
-  MACOS_VM_IMAGE: 'macos-12'
+  MACOS_VM_IMAGE: 'macos-13'

@@ -29,9 +29,21 @@ public partial class ViewController : UIViewController
 
     private void MakeWithDurationAndPosition()
     {
-        View!.MakeToast(new NSString("This is a piece of toast on top for 3 seconds"),
-                       3.0f,
-                       CSToastPosition.Center);
+        var position = CSToastPosition.Center;
+        // or custom coordinates:
+        // var position = NSValue.FromCGPoint(new CGPoint(30, 200));
+
+        View!.MakeToast(
+            message: new NSString("This is a piece of toast on top for 3 seconds"),
+            duration: 3.0f,
+            position: position,
+            title: new NSString("Test Title"),
+            image: null,
+            style: null,
+            completion: (didTap) =>
+            {
+                Debug.WriteLine(didTap ? "Did Tap" : "No Tap");
+            });
     }
 
     private void MakeWithTitle()
