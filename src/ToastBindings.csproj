@@ -1,15 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Xamarin.Legacy.Sdk/0.2.0-alpha4">
   <PropertyGroup>
-    <TargetFramework>net6.0-ios10</TargetFramework>
+    <TargetFrameworks>xamarin.ios10;net6.0-ios</TargetFrameworks>
+    <NoNFloatUsing Condition="'$(TargetFramework)' == 'xamarin.ios10'">true</NoNFloatUsing>
     <IsBindingProject>true</IsBindingProject>
-    <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion>10.0</SupportedOSPlatformVersion>
 
     <!-- Assembly & NuGet Info -->
     <Title>Toast for Xamarin.iOS</Title>
     <Description>Xamarin iOS binding library of Toast - toast notifications to the UIView.</Description>
     <Company>Softeq Development Corporation</Company>
     <Copyright>Copyright © 2024 Softeq Development Corporation</Copyright>
-    <Version>4.0.0.3</Version>
+    <Version>4.0.0.4</Version>
     <Authors>Softeq Development Corp.</Authors>
     <Owners>Softeq Development Corp.</Owners>
     <PackageProjectUrl>https://github.com/Softeq/Toast-xamarin-ios</PackageProjectUrl>
@@ -24,9 +25,15 @@
     <None Include="../README.md" Visible="False" Pack="true" PackagePath="" />
   </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'xamarin.ios10'">
+    <Compile Remove="ApiDefinition.cs" />
+    <Compile Remove="StructsAndEnums.cs" />
+  </ItemGroup>
   <ItemGroup>
-    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
-    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true'" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true'" />
   </ItemGroup>
 
   <ItemGroup>
