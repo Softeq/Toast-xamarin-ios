@@ -16,3 +16,10 @@ steps:
     targetType: 'inline'
     script: |
       dotnet workload install ios
+
+- task: Bash@3
+  displayName: Install Xamarin
+  inputs:
+    targetType: 'inline'
+    script: |
+      brew install --cask xamarin-ios
