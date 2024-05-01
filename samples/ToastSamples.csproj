@@ -38,4 +38,10 @@
     <ItemGroup>
     <ProjectReference Include="..\src\ToastBindings.csproj" />
   </ItemGroup>
+  <!-- Temporary solution for net6.0 https://github.com/dotnet/maui/discussions/15540#discussioncomment-6554443 -->
+  <!-- Can be removed after updating to net8.0 https://github.com/xamarin/xamarin-macios/issues/18964 -->
+  <PropertyGroup>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchExtraArgs>$(MtouchExtraArgs) --weak-framework=NewsstandKit</MtouchExtraArgs>
+  </PropertyGroup>
 </Project>
