@@ -42,6 +42,15 @@ namespace ToastBindings
 
         [Export("hideToast:")]
         void HideToast(UIView view);
+
+        [Export("hideAllToasts")]
+        void HideAllToasts();
+
+        [Export("hideAllToasts:clearQueue:")]
+        void HideAllToasts(bool includeActivity, bool clearQueue);
+
+        [Export("clearToastQueue")]
+        void ClearToastQueue();
     }
 
     [BaseType(typeof(NSObject))]

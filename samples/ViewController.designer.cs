@@ -16,6 +16,15 @@ namespace ToastSamples
 		UIKit.UIButton BasicUsageBtn { get; set; }
 
 		[Outlet]
+		UIKit.UIButton ClearQueueBtn { get; set; }
+
+		[Outlet]
+		UIKit.UIButton HideToastsAndClearQueueBtn { get; set; }
+
+		[Outlet]
+		UIKit.UIButton HideToastsBtn { get; set; }
+
+		[Outlet]
 		UIKit.UIButton MakeWithDurationBtn { get; set; }
 		
 		void ReleaseDesignerOutlets ()
@@ -23,6 +32,21 @@ namespace ToastSamples
 			if (BasicUsageBtn != null) {
 				BasicUsageBtn.Dispose ();
 				BasicUsageBtn = null;
+			}
+
+			if (ClearQueueBtn != null) {
+				ClearQueueBtn.Dispose ();
+				ClearQueueBtn = null;
+			}
+
+			if (HideToastsBtn != null) {
+				HideToastsBtn.Dispose ();
+				HideToastsBtn = null;
+			}
+
+			if (HideToastsAndClearQueueBtn != null) {
+				HideToastsAndClearQueueBtn.Dispose ();
+				HideToastsAndClearQueueBtn = null;
 			}
 
 			if (MakeWithDurationBtn != null) {
