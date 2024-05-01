@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,26 +19,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulO-pt-Awz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulO-pt-Awz">
                                 <rect key="frame" x="0.0" y="100" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="52Z-4q-3kU"/>
                                 </constraints>
                                 <state key="normal" title="Basic usage"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYx-0k-Dz1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYx-0k-Dz1">
                                 <rect key="frame" x="0.0" y="138" width="375" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="LUL-9G-oiK"/>
                                 </constraints>
                                 <state key="normal" title="Make with duration"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhU-8c-F0m" userLabel="Hide Toast">
+                                <rect key="frame" x="112.5" y="176" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Hide Toasts"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhs-jY-F3O" userLabel="Clear Queue">
+                                <rect key="frame" x="187.5" y="176" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Clear Queue"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6KJ-0o-GoE" userLabel="Hide Toast And Clear Queue">
+                                <rect key="frame" x="0.0" y="219" width="375" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Hide Toasts And Clear Queue"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="JYx-0k-Dz1" secondAttribute="trailing" id="1tF-6H-Dqg"/>
+                            <constraint firstItem="mhs-jY-F3O" firstAttribute="top" secondItem="JYx-0k-Dz1" secondAttribute="bottom" constant="8" id="2cT-xS-Odr"/>
+                            <constraint firstItem="6KJ-0o-GoE" firstAttribute="leading" secondItem="JYx-0k-Dz1" secondAttribute="leading" id="4yi-Ka-CRV"/>
+                            <constraint firstItem="UhU-8c-F0m" firstAttribute="top" secondItem="JYx-0k-Dz1" secondAttribute="bottom" constant="8" id="5vX-WS-Pdr"/>
+                            <constraint firstItem="mhs-jY-F3O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ARQ-W1-fbJ"/>
                             <constraint firstItem="ulO-pt-Awz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BxJ-Ka-IMi"/>
+                            <constraint firstItem="6KJ-0o-GoE" firstAttribute="top" secondItem="mhs-jY-F3O" secondAttribute="bottom" constant="8" id="YWQ-sN-cAQ"/>
                             <constraint firstAttribute="trailing" secondItem="ulO-pt-Awz" secondAttribute="trailing" id="ZLc-TP-SRw"/>
+                            <constraint firstItem="UhU-8c-F0m" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jmg-Iq-fez"/>
+                            <constraint firstItem="6KJ-0o-GoE" firstAttribute="trailing" secondItem="JYx-0k-Dz1" secondAttribute="trailing" id="mO7-CL-wle"/>
                             <constraint firstItem="JYx-0k-Dz1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nIp-jj-R8g"/>
                             <constraint firstItem="ulO-pt-Awz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="rP9-xa-MIr"/>
                             <constraint firstItem="JYx-0k-Dz1" firstAttribute="top" secondItem="ulO-pt-Awz" secondAttribute="bottom" constant="8" id="sjY-qf-oke"/>
@@ -47,11 +68,15 @@
                     </view>
                     <connections>
                         <outlet property="BasicUsageBtn" destination="ulO-pt-Awz" id="GwC-0i-FqH"/>
+                        <outlet property="ClearQueueBtn" destination="mhs-jY-F3O" id="Yay-2e-QLY"/>
+                        <outlet property="HideToastsAndClearQueueBtn" destination="6KJ-0o-GoE" id="YGR-a5-W1h"/>
+                        <outlet property="HideToastsBtn" destination="UhU-8c-F0m" id="cKa-ar-t2L"/>
                         <outlet property="MakeWithDurationBtn" destination="JYx-0k-Dz1" id="LTc-VC-dCQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-41" y="-69"/>
         </scene>
     </scenes>
 </document>

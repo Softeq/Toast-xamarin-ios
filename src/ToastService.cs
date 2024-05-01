@@ -15,6 +15,21 @@ public static class ToastService
         view.HideToast(toast);
     }
 
+    public static void HideAllToasts(UIView view)
+    {
+        view.HideAllToasts();
+    }
+
+    public static void HideAllToasts(UIView view, bool clearQueue)
+    {
+        view.HideAllToasts(false, clearQueue);
+    }
+
+    public static void ClearToastQueue(UIView view)
+    {
+        view.ClearToastQueue();
+    }
+
     public static void ShowToast(UIView parentView,
                                  UIView toastView,
                                  ToastPosition? toastPosition = null,

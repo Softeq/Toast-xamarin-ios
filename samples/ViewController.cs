@@ -18,8 +18,28 @@ public partial class ViewController : UIViewController
     {
         base.ViewDidLoad();
 
+        CSToastManager.SetQueueEnabled(true);
+
         BasicUsageBtn.TouchUpInside += (sender, e) => MakeBasic();
         MakeWithDurationBtn.TouchUpInside += (sender, e) => MakeWithDurationAndPosition();
+        HideToastsBtn.TouchUpInside += (s, e) => HideAllToast();
+        HideToastsAndClearQueueBtn.TouchUpInside += (s, e) => HideToastAndClearQueue();
+        ClearQueueBtn.TouchUpInside += (s, e) => ClearQueue();
+    }
+
+    private void ClearQueue()
+    {
+        ToastService.ClearToastQueue(View!);
+    }
+
+    private void HideToastAndClearQueue()
+    {
+        ToastService.HideAllToasts(View!);
+    }
+
+    private void HideAllToast()
+    {
+        ToastService.HideAllToasts(View!, false);
     }
 
     private void MakeBasic()
